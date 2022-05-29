@@ -29,8 +29,6 @@ jobs:
         target_branch: master
         github_token: ${{ github.token }}
 
-      run: |
-        echo "合并到主分支结束" 
         
       
        
