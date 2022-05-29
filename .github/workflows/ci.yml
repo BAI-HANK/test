@@ -8,19 +8,19 @@ jobs:
    deploy_job:
     runs-on: ubuntu-latest
     steps: 
+      - name: s1
         # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
         - uses: actions/checkout@v1
         # 安装v16.4.2 的node
         - uses: actions/setup-node@v3
           with:
             node-version: 'v16.4.2'  
-  
+     -name: s2
         if: ${{ github.ref == 'refs/heads/main' }}
         - run:  echo  "dddddd" 
-
-        # if: ${{ github.ref != 'refs/heads/main' }}
-        # - run: git merge ${GITHUB_REF##*/}
        
+
+        
         
 
 
