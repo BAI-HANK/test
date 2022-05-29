@@ -13,23 +13,23 @@ jobs:
       with:
         args: "branch master"
 
-   deploy_job:
-    runs-on: ubuntu-latest
-    needs: merge_job
-    steps: 
-      - name: build
-        # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
-        - uses: actions/checkout@v1
-        # 安装v16.4.2 的node
-        - uses: actions/setup-node@v3
-        with:
-          node-version: 'v16.4.2'  
-        # 不是 master  分支
-        jobs.<merge_job>.if: failure()
-        #合并到主分支
-        run: git merge ${GITHUB_REF##*/}
-        # 是 master  分支
-        jobs.<merge_job>.if: success()
+  #  deploy_job:
+  #   runs-on: ubuntu-latest
+  #   needs: merge_job
+  #   steps: 
+  #     - name: build
+  #       # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
+  #       - uses: actions/checkout@v1
+  #       # 安装v16.4.2 的node
+  #       - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 'v16.4.2'  
+  #       # 不是 master  分支
+  #       jobs.<merge_job>.if: failure()
+  #       #合并到主分支
+  #       run: git merge ${GITHUB_REF##*/}
+  #       # 是 master  分支
+  #       jobs.<merge_job>.if: success()
 
 
 
