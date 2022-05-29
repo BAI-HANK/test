@@ -15,12 +15,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'v16.4.2'  
-     - name: two
-        # if: ${GITHUB_REF##*/} == "master"
-        #   run:  echo "is master"
-        # if: ${GITHUB_REF##*/} != "master"
-        #   run: git merge ${GITHUB_REF##*/}
-        run: echo "ssss"
+    #  - name: two
+    #     if: ${GITHUB_REF##*/} == "master"
+    #       run:  echo "is master"
+    #     if: ${GITHUB_REF##*/} != "master"
+    #       run: git merge ${GITHUB_REF##*/}
+    #     run: echo "ssss"
         
 
 
