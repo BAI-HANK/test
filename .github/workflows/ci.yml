@@ -8,10 +8,10 @@ jobs:
   merge_job: 
     runs-on: ubuntu-latest
     steps: 
-    - name: one
-      - uses: "actions/bin/filter@master"
-      with:
-        args: "branch master"
+    # - name: one
+    #   - uses: "actions/bin/filter@master"
+    #   with:
+    #     args: "branch master"
 
   #  deploy_job:
   #   runs-on: ubuntu-latest
