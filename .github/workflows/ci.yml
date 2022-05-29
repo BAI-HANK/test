@@ -5,16 +5,16 @@ on:
   [push]
 
 jobs: 
-   runs-on: ubuntu-latest
-
    merge_job: 
-     uses = "actions/bin/filter@master"
-     args = "branch master"
+    runs-on: ubuntu-latest
+    uses = "actions/bin/filter@master"
+    args = "branch master"
 
    deploy_job:
+     runs-on: ubuntu-latest
      needs: merge_job
      steps: 
-       -name: build
+     -name: build
           # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
           - uses: actions/checkout@v1
           # 安装v16.4.2 的node
