@@ -18,12 +18,13 @@ jobs:
       with:
         node-version: 'v16.4.2'  
     - name: s3
-      - if: ${{ github.ref == 'refs/heads/main' }}
+      if: ${{ github.ref == 'refs/heads/main' }}
       shell: bash
-      - run:  echo  "${github.ref} main "
-
-      - if: ${{ github.ref == 'refs/heads/master' }}
-      - run:  echo " ${github.ref} master "
+      run:  echo  "${github.ref} main "
+    - name: s4
+      if: ${{ github.ref == 'refs/heads/master' }}
+      shell: bash
+      run:  echo " ${github.ref} master "
 
 
        
