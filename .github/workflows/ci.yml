@@ -22,11 +22,19 @@ jobs:
       run:  echo "master"
     - name: s4
       if: ${{ github.ref != 'refs/heads/master' }}
-      shell: bash
       run: |
-        echo "合并到主分支"  
-        git checkout master
-        git merge origin/${GITHUB_REF_NAME}
+        echo "合并到主分支开始" 
+
+      uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: origin/${GITHUB_REF_NAME}
+          target_branch: master
+          github_token: ${{ github.token }}
+
+       run: |
+        echo "合并到主分支结束" 
+        
       
        
 
