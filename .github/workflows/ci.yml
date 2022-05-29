@@ -23,8 +23,9 @@ jobs:
     - name: s4
       if: ${{ github.ref != 'refs/heads/master' }}
       shell: bash
-      run:  echo ${GITHUB_REF_NAME}
-      run:  echo "合并"
+      run: |
+        echo "合并到主分支"  
+        git merge ${GITHUB_REF_NAME}
       
        
 
