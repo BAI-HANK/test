@@ -23,7 +23,7 @@ jobs:
     - name: s4
       if: ${{ github.ref != 'refs/heads/master' }}
       shell: bash
-      run:  echo "dev"
+      run:  echo ${GITHUB_REF_NAME}
       
        
 
