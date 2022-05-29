@@ -7,7 +7,7 @@ on:
 jobs: 
 
    merge_job: 
-
+     run: echo "why"
      runs-on: ubuntu-latest
      - uses : "actions/bin/filter@master"
      with:
