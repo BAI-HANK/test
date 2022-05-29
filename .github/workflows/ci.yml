@@ -19,6 +19,7 @@ jobs:
         node-version: 'v16.4.2'  
     - name: s3
         if: ${{ github.ref == 'refs/heads/main' }}
+        shell: bash
         run:  echo  "dddddd" 
        
 
