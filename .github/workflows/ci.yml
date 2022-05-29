@@ -8,7 +8,7 @@ jobs:
    deploy_job:
     runs-on: ubuntu-latest
     steps: 
-      - name: s1
+    - name: s1
         # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
         - uses: actions/checkout@v1
         # 安装v16.4.2 的node
