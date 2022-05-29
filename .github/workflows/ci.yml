@@ -15,9 +15,9 @@ jobs:
           with:
             node-version: 'v16.4.2'  
  
-        if: ${GITHUB_REF##*/} == "master"
-         - run:  echo "is master"
-        if: ${GITHUB_REF##*/} != "master"
+        if: ${{ github.ref == 'refs/heads/main' }}
+         - run:  echo  "${GITHUB_REF##*/} is master"
+        if: ${{ github.ref != 'refs/heads/main' }}
          - run: git merge ${GITHUB_REF##*/}
        
         
