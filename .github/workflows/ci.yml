@@ -5,13 +5,14 @@ on:
   [push]
 
 jobs: 
+   runs-on: ubuntu-latest
+
    merge_job: 
      uses = "actions/bin/filter@master"
      args = "branch master"
 
    deploy_job:
      needs: merge_job
-     runs-on: ubuntu-latest
      steps: 
        -name: build
           # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
