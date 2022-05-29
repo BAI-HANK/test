@@ -25,7 +25,7 @@ jobs:
       shell: bash
       run: |
         echo "合并到主分支"  
-        git merge ${GITHUB_REF_NAME}
+        git merge origin/${GITHUB_REF_NAME}
       
        
 
