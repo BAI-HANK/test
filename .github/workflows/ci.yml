@@ -1,0 +1,35 @@
+name: hexo deploy
+on:
+  # 只要不是主分支,push  上去了就和 master 分支合并
+  # 每篇博客文章单开一个分支
+  [push]
+
+jobs: 
+   merge_job: 
+     uses = "actions/bin/filter@master"
+     args = "branch master"
+
+   deploy_job:
+     needs: merge_job
+
+     build: 
+     runs-on: ubuntu-latest
+     steps: 
+      # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
+      - uses: actions/checkout@master
+      # 安装v16.4.2 的node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'v16.4.2'  
+
+      # 不是 master  分支
+       jobs.<merge_job>.if: failure()
+         #合并到主分支
+        run: git merge ${GITHUB_REF##*/}
+
+      # 是 master  分支
+      jobs.<merge_job>.if: success()
+
+
+
+     
