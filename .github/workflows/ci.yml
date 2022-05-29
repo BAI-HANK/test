@@ -10,7 +10,7 @@ jobs:
     steps: 
     - name: s1
         # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
-      uses: actions/checkout@v1
+      uses: actions/checkout@master
     - name: s2  
         # 安装v16.4.2 的node
       uses: actions/setup-node@v3
@@ -23,11 +23,11 @@ jobs:
     - name: s4
       if: ${{ github.ref != 'refs/heads/master' }}
       uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: origin/${GITHUB_REF_NAME}
-          target_branch: master
-          github_token: ${{ github.token }}
+      with:
+        type: now
+        from_branch: origin/${GITHUB_REF_NAME}
+        target_branch: master
+        github_token: ${{ github.token }}
 
       run: |
         echo "合并到主分支结束" 
