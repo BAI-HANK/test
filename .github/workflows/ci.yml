@@ -17,9 +17,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 'v16.4.2'  
-    # - name: s3
-    #      if: ${{ github.ref == 'refs/heads/main' }}
-    #      run:  echo  "dddddd" 
+    - name: s3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run:  echo  "dddddd" 
        
 
         
