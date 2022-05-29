@@ -14,9 +14,9 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 'v16.4.2'  
- 
+  
         if: ${{ github.ref == 'refs/heads/main' }}
-        - run:  echo  ${GITHUB_REF##*/} 
+        - run:  echo  "dddddd" 
 
         # if: ${{ github.ref != 'refs/heads/main' }}
         # - run: git merge ${GITHUB_REF##*/}
