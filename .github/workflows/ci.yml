@@ -11,22 +11,20 @@ jobs:
     - name: s1
         # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
       uses: actions/checkout@v1
-
     - name: s2  
         # 安装v16.4.2 的node
       uses: actions/setup-node@v3
       with:
         node-version: 'v16.4.2'  
     - name: s3
-      if: ${{ github.ref == 'refs/heads/main' }}
-      shell: bash
-      run:  echo  "main"
-    - name: s4
       if: ${{ github.ref == 'refs/heads/master' }}
       shell: bash
       run:  echo "master"
-
-
+    - name: s4
+      if: ${{ github.ref != 'refs/heads/master' }}
+      shell: bash
+      run:  echo "dev"
+      
        
 
         
