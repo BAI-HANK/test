@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: one
-        run: echo "hi"
         uses: "actions/bin/filter@master"
         with:
-        args: "branch master"
+          args: "branch master"
 
   #  deploy_job:
   #   runs-on: ubuntu-latest
