@@ -10,11 +10,11 @@ jobs:
     steps: 
       - name: build
         # 把 代码库迁出到 GitHub action 的虚拟机 ubuntu-latest
-        uses: actions/checkout@v1
+       - uses: actions/checkout@v1
         # 安装v16.4.2 的node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 'v16.4.2'  
+       - uses: actions/setup-node@v3
+         with:
+           node-version: 'v16.4.2'  
     #  - name: two
     #     if: ${GITHUB_REF##*/} == "master"
     #       run:  echo "is master"
