@@ -23,7 +23,6 @@ jobs:
       run:  echo  "${github.ref} main "
 
       if: ${{ github.ref == 'refs/heads/master' }}
-      shell: bash
       run:  echo " ${github.ref} master "
 
 
