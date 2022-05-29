@@ -24,7 +24,7 @@ jobs:
       if: ${{ github.ref != 'refs/heads/master' }}
       shell: bash
       run:  echo ${GITHUB_REF_NAME}
-      run: echo 哈哈
+      - run: echo 哈哈
       
        
 
