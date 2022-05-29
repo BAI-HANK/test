@@ -23,8 +23,8 @@ jobs:
     - name: s4
       if: ${{ github.ref != 'refs/heads/master' }}
       shell: bash
-      run:  echo ${GITHUB_REF_NAME}
-      - run: echo 哈哈
+      echo ${GITHUB_REF_NAME}
+      run: git merge ${GITHUB_REF_NAME}
       
        
 
