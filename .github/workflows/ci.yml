@@ -20,11 +20,11 @@ jobs:
     - name: s3
       if: ${{ github.ref == 'refs/heads/main' }}
       shell: bash
-      run:  echo  "${github.ref} main "
+      run:  echo  "main"
     - name: s4
       if: ${{ github.ref == 'refs/heads/master' }}
       shell: bash
-      run:  echo " ${github.ref} master "
+      run:  echo "master"
 
 
        
