@@ -7,8 +7,9 @@ on:
 jobs: 
    merge_job: 
     runs-on: ubuntu-latest
-    uses = "actions/bin/filter@master"
-    args = "branch master"
+    - uses : "actions/bin/filter@master"
+    with:
+      args = "branch master"
 
    deploy_job:
      runs-on: ubuntu-latest
